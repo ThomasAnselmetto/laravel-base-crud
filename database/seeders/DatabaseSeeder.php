@@ -14,11 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // stabilisco che voglio eseguire il seeder Song e con il comando 'php artisan db:seed' dichiaro tramite il databaseseeder(che e' un po' il master dei seeder) quale seed runnare dal terminale.
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            // questo e' un array e se avessi piu' seeder li separo con una virgola
+            
+            SongSeeder::class
+        ]);
     }
 }
