@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('album',50);
             $table->string('author',50);
             $table->string('editor',50);
-            $table->string('length',10);
+            $table->string('length',15);
             $table->string('poster');
             $table->integer('streaming_number');
             $table->enum('formats_available', ['vinile','digitale']);

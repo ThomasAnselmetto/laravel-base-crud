@@ -29,3 +29,9 @@ Route::get('/', function () {
 Route::resource('songs',SongController::class);
 
 // creiamo le rotte della risorsa songs e questa cosa e' gestita dal controller SongController
+
+// nel caso in cui avessimo un array di rotte la sintassi e' questa
+// Route::resources([
+//     'songs'=> SongController::class,
+//     'cani'=> CaneController::class,
+// ]);
