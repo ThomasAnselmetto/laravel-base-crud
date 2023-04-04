@@ -9,12 +9,14 @@ class SongController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * ci fa vedere tutte le liste della risorsa
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $songs = Song::all();
+        return view('songs.index');
     }
 
     /**

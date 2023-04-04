@@ -19,10 +19,10 @@ class SongSeeder extends Seeder
     {   for($i = 0;$i < 50; $i++){
 
         $song = new Song;
-        $song->title = $faker->shuffle('hello-world');
-        $song->album = $faker->shuffle('hello-world');
+        $song->title = $faker->paragraph();
+        $song->album = $faker->asciify('hello-world');
         $song->author = $faker->numerify('singer-####');
-        $song->editor = $faker->shuffle('hello-world');
+        $song->editor = $faker->asciify('hello-world');
         $song->length = $faker->shuffle('hello-world');
         $song->poster = 'https://picsum.photos/300/500';
         $song->streaming_number = $faker->randomNumber(6,true);

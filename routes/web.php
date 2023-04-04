@@ -14,16 +14,17 @@ use App\Http\Controllers\SongController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// dopo diversi tentativi sono arrivato alla view giusta songs/index
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('songs/index');
 });
 
 // creo la rotta delle canzoni,con una route resource che al suo interno ha gia' index,create,store,destroy ecc...
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/layouts/app', function () {
+//     return view('app');
+// });
 // questo comando qui genera tutte le rotte
 
 Route::resource('songs',SongController::class);
