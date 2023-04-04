@@ -19,6 +19,9 @@ use App\Http\Controllers\SongController;
 Route::get('/', function () {
     return view('songs/index');
 });
+Route::get('/show', function () {
+    return view('songs/show');
+});
 
 // creo la rotta delle canzoni,con una route resource che al suo interno ha gia' index,create,store,destroy ecc...
 
@@ -35,4 +38,4 @@ Route::resource('songs',SongController::class);
 // Route::resources([
 //     'songs'=> SongController::class,
 //     'cani'=> CaneController::class,
-// ]);
+// ])

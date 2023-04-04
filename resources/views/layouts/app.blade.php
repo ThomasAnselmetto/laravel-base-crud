@@ -9,7 +9,7 @@
   {{-- <img class="my-1" src="{{ Vite::asset('resources/img/logo.png') }}" alt=""> --}}
 </head>
 <body>
-@yield('navbar')
+@include('partials.navbar')
 <main>
   @yield('main-content')
 </main>
