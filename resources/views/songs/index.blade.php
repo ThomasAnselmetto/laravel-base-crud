@@ -9,7 +9,7 @@
 
 @section('main-content')
 
-<table class="table table-dark table-striped">
+<table class="table table-dark table-striped border border-dark">
   <thead>
     <tr>
       <th scope="col">Id</th>
