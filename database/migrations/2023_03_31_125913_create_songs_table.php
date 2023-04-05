@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
-            $table->string('title',50);
+            $table->string('title');
             $table->string('album',50);
             $table->string('author',50);
             $table->string('editor',50);
             $table->string('length',15);
             $table->string('poster');
-            $table->integer('streaming_number');
+            $table->integer('streaming_number')->unsigned();
             $table->enum('formats_available', ['vinile','digitale']);
             // timestamp crea i due campi di tracciamento nella tabella
             $table->timestamps();

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 // importiamo controller
 use App\Http\Controllers\SongController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,20 +16,24 @@ use App\Http\Controllers\SongController;
 |
 */
 // dopo diversi tentativi sono arrivato alla view giusta songs/index
+// Route::get('/', function () {
+//     return view('layouts/app');
+// })->name('homepage');
 
-Route::get('/', function () {
-    return view('songs/index');
-});
-Route::get('/show', function () {
-    return view('songs/show');
-});
+// Route::get('/songs', function () {
+//     return view('songs/index');
+// });
+// Route::get('/show', function () {
+//     return view('songs/show');
+// });
 
-// creo la rotta delle canzoni,con una route resource che al suo interno ha gia' index,create,store,destroy ecc...
+// creo la rotta delle canzoni,con una route resource che al suo interno ha gia' index,create,store,show,edit e destroy ecc...
 
 // Route::get('/layouts/app', function () {
 //     return view('app');
 // });
 // questo comando qui genera tutte le rotte
+Route::get('/', [Pagecontroller::class, 'index'])->name('homepage');
 
 Route::resource('songs',SongController::class);
 
@@ -39,3 +44,25 @@ Route::resource('songs',SongController::class);
 //     'songs'=> SongController::class,
 //     'cani'=> CaneController::class,
 // ])
+
+// ! Rotte contenute in Route::resource
+// * Rotta per la lista index
+// Route::get('/songs', [PageController::class, 'index'])->name('songs.index');
+
+// * Rotta per il dettaglio risorsa show
+// Route::get('/songs/{song}', [songController::class, 'show'])->name('songs.show');
+
+// * Rotta per il form creazione risorsa
+// Route::get('/songs/create', [songController::class, 'create'])->name('songs.create');
+
+// * Rotta per il salvataggio form creazione risorsa
+// Route::get('/songs', [songController::class, 'store'])->name('songs.store');
+
+// * Rotta per il form di modifica risorsa
+// Route::get('/songs/{song}/edit', [songController::class, 'edit'])->name('songs.edit');
+
+// * Rotta per il form di modifica risorsa
+// Route::put('/songs/{song}/update', [songController::class, 'update'])->name('songs.update');
+
+// * Rotta per cancellazione risorsa singola
+// Route::delete('/songs/{song}/destroy', [songController::class, 'destroy'])->name('songs.destroy');

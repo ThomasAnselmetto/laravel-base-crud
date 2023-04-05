@@ -19,7 +19,7 @@ class SongSeeder extends Seeder
     {   for($i = 0;$i < 50; $i++){
 
         $song = new Song;
-        $song->title = $faker->paragraph();
+        $song->title = $faker->paragraph(1);
         $song->album = $faker->asciify('hello-world');
         $song->author = $faker->numerify('singer-####');
         $song->editor = $faker->asciify('hello-world');

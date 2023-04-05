@@ -17,6 +17,6 @@
 
 
 
-  
+  @yield('prova')
 </body>
 </html>
