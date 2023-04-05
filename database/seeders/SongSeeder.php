@@ -20,13 +20,13 @@ class SongSeeder extends Seeder
 
         $song = new Song;
         $song->title = $faker->paragraph(1);
-        $song->album = $faker->asciify('hello-world');
+        $song->album = $faker->asciify();
         $song->author = $faker->numerify('singer-####');
-        $song->editor = $faker->asciify('hello-world');
-        $song->length = $faker->shuffle('hello-world');
+        $song->editor = $faker->asciify();
+        $song->length = $faker->randomFloat(2, 3, 20);
         $song->poster = 'https://picsum.photos/300/500';
-        $song->streaming_number = $faker->randomNumber(6,true);
-        $song->formats_available = $faker->randomElement(['vinile','digitale']);
+        $song->number_of_streaming = $faker->randomNumber(6,true);
+        $song->music_release_formats = $faker->randomElement(['vinile','digitale']);
         
         // il save va messo ogni volta chhe creo un oggetto
         $song->save();

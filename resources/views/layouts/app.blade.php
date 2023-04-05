@@ -11,12 +11,17 @@
 <body>
 @include('partials.navbar')
 <main>
-  @yield('main-content')
+  <section>
+    <div class="container">
+      <h1 class="my-5">@yield('page-name')</h1>
+      @yield('main-content')
+    </div>
+  </section>
 </main>
 @yield('footer')
 
 
 
-  @yield('prova')
+  
 </body>
 </html>

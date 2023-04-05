@@ -1,2 +1,2 @@
 @extends('layouts.app')
-@section('prova','aaaaaaaaa')
+@section('page-name','homepage')

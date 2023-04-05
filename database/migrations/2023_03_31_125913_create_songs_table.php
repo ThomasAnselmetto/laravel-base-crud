@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('album',50);
             $table->string('author',50);
             $table->string('editor',50);
-            $table->string('length',15);
+            $table->float('length');
             $table->string('poster');
-            $table->integer('streaming_number')->unsigned();
-            $table->enum('formats_available', ['vinile','digitale']);
+            $table->integer('number_of_streaming')->unsigned();
+            $table->enum('music_release_formats', ['vinile','digitale']);
             // timestamp crea i due campi di tracciamento nella tabella
             $table->timestamps();
         });

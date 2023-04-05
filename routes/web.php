@@ -15,23 +15,10 @@ use App\Http\Controllers\PageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// dopo diversi tentativi sono arrivato alla view giusta songs/index
-// Route::get('/', function () {
-//     return view('layouts/app');
-// })->name('homepage');
-
-// Route::get('/songs', function () {
-//     return view('songs/index');
-// });
-// Route::get('/show', function () {
-//     return view('songs/show');
-// });
 
 // creo la rotta delle canzoni,con una route resource che al suo interno ha gia' index,create,store,show,edit e destroy ecc...
 
-// Route::get('/layouts/app', function () {
-//     return view('app');
-// });
+
 // questo comando qui genera tutte le rotte
 Route::get('/', [Pagecontroller::class, 'index'])->name('homepage');
 
@@ -39,6 +26,15 @@ Route::resource('songs',SongController::class);
 
 // creiamo le rotte della risorsa songs e questa cosa e' gestita dal controller SongController
 
+// dopo diversi tentativi sono arrivato alla view giusta songs/index
+
+
+// Route::get('/songs', function () {
+//     return view('songs/index');
+// });
+// Route::get('/show', function () {
+//     return view('songs/show');
+// });
 // nel caso in cui avessimo un array di rotte la sintassi e' questa
 // Route::resources([
 //     'songs'=> SongController::class,

@@ -15,8 +15,11 @@ class SongController extends Controller
      */
     public function index()
     {
+        // della lista delle canzoni se ne occupa SongController al metodo index e poi passo la var nel compact come stringa il quale crea un array con la var e i suoi attributi
+
+
         $songs = Song::all();
-        return view('songs.index');
+        return view('songs.index', compact('songs'));
     }
 
     /**
