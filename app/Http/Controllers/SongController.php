@@ -50,9 +50,15 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    // posso passare come parametro di show l'intero oggetto invece che passare l'$id che poi devo andarmi a recuperare con una query:
+    // $song = Song::find($id);
+
+    public function show(Song $song)
     {
-        //
+    //    la mia funzione ritorna i dati del parametro song alla view (songs.show) 
+        return view('songs.show', compact('song'));
+
     }
 
     /**

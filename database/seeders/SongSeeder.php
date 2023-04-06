@@ -24,7 +24,7 @@ class SongSeeder extends Seeder
         $song->author = $faker->numerify('singer-####');
         $song->editor = $faker->asciify();
         $song->length = $faker->randomFloat(2, 3, 20);
-        $song->poster = 'https://picsum.photos/300/500';
+        $song->poster = 'https://picsum.photos/id/69/400/300';
         $song->number_of_streaming = $faker->randomNumber(6,true);
         $song->music_release_formats = $faker->randomElement(['vinile','digitale']);
         

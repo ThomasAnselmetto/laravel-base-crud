@@ -20,6 +20,7 @@
       <th scope="col">Length</th>
       <th scope="col">Number of Streaming</th>
       <th scope="col">Music Release Formats</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -34,6 +35,10 @@
       <td>{{$song->length}}</td>
       <td>{{$song->number_of_streaming}}</td>
       <td>{{$song->music_release_formats}}</td>
+      <td><a href="{{ route('songs.show', ['song' => $song ])}}">Detail</a></td>
+
+      {{-- creata la colonna detail creo un td che rimanderà alla rotta della show e gli viene passato il parametro con l'intero elemento $song tramite array associativo['song' => $song possiamo passarlo anche solo come $song] (a noi serve l'id ma la resource ci facilita in questo senso) --}}
+
     </tr>
     @endforeach
     

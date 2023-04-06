@@ -12,8 +12,7 @@
 @include('partials.navbar')
 <main>
   <section>
-    <div class="container">
-      <h1 class="my-5">@yield('page-name')</h1>
+    <div class="container text-center">
       @yield('main-content')
     </div>
   </section>
