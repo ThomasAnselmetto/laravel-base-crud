@@ -8,3 +8,24 @@
         margin: 0 15px;
     }
 }
+
+body {
+    background-image: linear-gradient(
+        to top,
+        #ffffff 0%,
+        #0d9dc5 50%,
+        #7834e7 100%
+    );
+    color: $gray-200;
+}
+table {
+    font-size: 20px;
+    font-weight: 600;
+}
+.dettaglio-canzone {
+    color: $red-700;
+}
+
+.table > thead {
+    vertical-align: middle;
+}

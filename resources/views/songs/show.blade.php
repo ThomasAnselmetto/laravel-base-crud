@@ -1,5 +1,5 @@
 {{-- utilizzo extends per estendere layouts.app.blade.php --}}
-@extends('layouts.app');
+@extends('layouts.app')
 
 {{-- section che da nome alle pagine e alle azioni --}}
 
@@ -9,7 +9,7 @@
 
 
 <h1 class="my-5">Titolo del brano: {{$song->title}}</h1>
-  <div class="row mt-1">
+  <div class="dettaglio-canzone row mt-1">
     <div class="col-8 offset-2">
       <div class="card text-center">
         <div class="card-header">
@@ -29,7 +29,7 @@
           <h5 class="card-title">{{$song->editor}}</h5>
           <h5 class="card-title">{{$song->number_of_streaming}}</h5>
           <p class="card-text">{{$song->length}}</p>
-          <a href="#" class="btn btn-primary">Ascoltala su...</a>
+          <a href="https://www.youtube.com/" class="btn btn-primary">Ascoltala su...</a>
         </div>
       </div>
     </div>

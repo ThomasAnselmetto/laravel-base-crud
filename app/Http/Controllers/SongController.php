@@ -13,14 +13,18 @@ class SongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // della lista delle canzoni se ne occupa SongController al metodo index e poi passo la var nel compact come stringa il quale crea un array con la var e i suoi attributi
+        // se c'e' un term nell'url(request)trovami una o piu' canzoni il cui name e' uguale a term
+        if($request->has('term')){
+            $term = $request->get('term');
+            $songs = Song::where('id','LIKE',"%$term%")->paginate(11)->withQueryString();
+        }else{
 
-// utilizzo limit() invece di all() per far comparire a schermo solo 10 elementi del database
-
-        $songs = Song::limit(10)->offset(0)->get();
+            $songs = Song::paginate(11);
+        }
         return view('songs.index', compact('songs'));
+
     }
 
     /**
