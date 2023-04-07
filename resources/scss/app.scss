@@ -10,13 +10,13 @@
 }
 
 main {
-    height: 100vh;
+    height: 200vh;
     padding-top: 15px;
     background-image: linear-gradient(
         to top,
-        #ffffff 0%,
-        #0d9dc5 50%,
-        #7834e7 100%
+        #0c0707 0%,
+        #2410d7 50%,
+        #13eaf5 100%
     );
     color: $gray-200;
 }

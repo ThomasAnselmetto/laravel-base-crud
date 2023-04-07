@@ -17,8 +17,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose Category</a>
           <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="#">Action 1</a>
-            <a class="dropdown-item" href="#">Action 2</a>
+            <a class="dropdown-item" href="#">Siamo</a>
+            <a class="dropdown-item" href="#">Inutili</a>
           </div>
         </li>
       </ul>

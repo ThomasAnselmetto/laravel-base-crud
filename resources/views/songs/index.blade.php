@@ -16,7 +16,7 @@
   <div class="col-6">
     <form class="d-flex my-2 my-lg-0">
       <input class="form-control me-sm-2" name="term" type="text" placeholder="Search Songs">
-      <button class="btn btn-info my-2 my-sm-0 fw-bold" type="submit">Search</button>
+      <button class="btn btn-light my-2 my-sm-0 fw-bold" type="submit">Search</button>
     </form>
   </div>
   <div class="col-6 d-flex justify-content-end">
