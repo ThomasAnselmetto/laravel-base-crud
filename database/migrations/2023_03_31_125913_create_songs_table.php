@@ -22,7 +22,7 @@ return new class extends Migration
             $table->float('length');
             $table->string('poster');
             $table->integer('number_of_streaming')->unsigned();
-            $table->enum('music_release_formats', ['vinile','digitale']);
+            $table->enum('music_release_formats', ['33 giri','45 giri','cd','digitale']);
             // timestamp crea i due campi di tracciamento nella tabella
             $table->timestamps();
         });

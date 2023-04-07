@@ -36,3 +36,13 @@ table {
     padding: 7px 15px;
     border: 2px solid $gray-200;
 }
+
+.create-form {
+    border: 2px solid $gray-200;
+    padding: 1rem;
+    label {
+        margin-top: 2rem;
+        font-size: 22px;
+        font-weight: 600;
+    }
+}

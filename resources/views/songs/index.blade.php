@@ -11,7 +11,7 @@
 
 @section('main-content')
 
-<h1 class="my-4">Song List</h1>
+<h1 class="mt-4 mb-5">Song List</h1>
 <div class="row">
   <div class="col-6">
     <form class="d-flex my-2 my-lg-0">

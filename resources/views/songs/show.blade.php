@@ -24,11 +24,12 @@
         </div>
         <div class="card-body">
           <img class="my-4" src="{{$song->poster}}" >
-          <h2 class="card-title">Cantante:  {{$song->author}}</h2>
-          <h4 class="card-title">Album:  {{$song->album}}</h4>
-          <h4 class="card-title">Editore:  {{$song->editor}}</h4>
-          <h4 class="card-title">Numero di Streaming:  {{$song->number_of_streaming}}</h4>
-          <h5 class="card-text">Lunghezza Brano:  {{$song->length}}</h5>
+          <h2 class="card-title mb-3">Cantante:  {{$song->author}}</h2>
+          <h2 class="card-title mb-3">Album:  {{$song->album}}</h2>
+          <h4 class="card-title mb-3">Editore:  {{$song->editor}}</h4>
+          <h4 class="card-text mb-3">Numero di Streaming:  {{$song->number_of_streaming}}</h4>
+          <h4 class="card-text mb-3">Lunghezza Brano:  {{$song->length}}</h4>
+          <h5 class="card-text mb-3">Formato disponibile:  {{$song->music_release_formats}}</h5>
           <a href="https://www.youtube.com/" class="btn btn-primary">Ascoltala su...</a>
         </div>
       </div>

@@ -45,17 +45,37 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+        
+            'title' => 'required',
+            'album' => 'required|string|max:50',
+            'author' => 'required|string|max:50',
+            'editor' => 'required|string|max:50',
+            'length' => 'required|decimal:2',
+            'number_of_streaming' => 'required|integer|between:1,10000000',
+            'music_release_formats' => "required|string|in:33 giri,45 giri,cd,digitale"
+        ],[
+            '*.required' => ':attribute is Required',
+            'length.decimal' => 'the number must have two decimals'
+        ]);
         $data = $request->all();
 
         $song = new Song;
-        $song->title = $data["title"];
-        $song->album = $data["album"];
-        $song->author = $data["author"];  
-        $song->editor = $data["editor"];
-        $song->length = $data["length"];
-        $song->poster = $data["poster"];
-        $song->number_of_streaming = $data["number_of_streaming"];
-        $song->music_release_formats = $data["music_release_formats"];
+        // forma estesa
+        // $song->title = $data["title"];
+        // $song->album = $data["album"];
+        // $song->author = $data["author"];  
+        // $song->editor = $data["editor"];
+        // $song->length = $data["length"];
+        // $song->poster = $data["poster"];
+        // $song->number_of_streaming = $data["number_of_streaming"];
+        // $song->music_release_formats = $data["music_release_formats"];
+        // che si puo' sintetizzare se attributo e chiave corrispondono
+        $song->fill($data);
+        // per poter utilizzare fill devo stabilire gli elementi fillable nel model
+        $song->save();
+        return redirect()->route('songs.show',$song);
     }
 
     /**

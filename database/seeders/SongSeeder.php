@@ -24,9 +24,9 @@ class SongSeeder extends Seeder
         $song->author = $faker->numerify('singer-####');
         $song->editor = $faker->asciify();
         $song->length = $faker->randomFloat(2, 3, 20);
-        $song->poster = 'https://picsum.photos/id/69/400/300';
+        $song->poster = 'https://miro.medium.com/v2/resize:fit:833/1*F3YiicPCfmgovWvZGdYuWA.png';
         $song->number_of_streaming = $faker->randomNumber(6,true);
-        $song->music_release_formats = $faker->randomElement(['vinile','digitale']);
+        $song->music_release_formats = $faker->randomElement(['33 giri','45 giri','cd', 'digitale']);
         
         // il save va messo ogni volta chhe creo un oggetto
         $song->save();
