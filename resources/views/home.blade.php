@@ -1,2 +1,4 @@
 @extends('layouts.app')
-@section('page-name','homepage')
+@section('segnaposto')
+<h1>Homepage</h1>
+@endsection

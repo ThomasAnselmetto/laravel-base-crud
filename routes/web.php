@@ -40,25 +40,3 @@ Route::resource('songs',SongController::class);
 //     'songs'=> SongController::class,
 //     'cani'=> CaneController::class,
 // ])
-
-// ! Rotte contenute in Route::resource
-// * Rotta per la lista index
-// Route::get('/songs', [PageController::class, 'index'])->name('songs.index');
-
-// * Rotta per il dettaglio risorsa show
-// Route::get('/songs/{song}', [songController::class, 'show'])->name('songs.show');
-
-// * Rotta per il form creazione risorsa
-// Route::get('/songs/create', [songController::class, 'create'])->name('songs.create');
-
-// * Rotta per il salvataggio form creazione risorsa
-// Route::get('/songs', [songController::class, 'store'])->name('songs.store');
-
-// * Rotta per il form di modifica risorsa
-// Route::get('/songs/{song}/edit', [songController::class, 'edit'])->name('songs.edit');
-
-// * Rotta per il form di modifica risorsa
-// Route::put('/songs/{song}/update', [songController::class, 'update'])->name('songs.update');
-
-// * Rotta per cancellazione risorsa singola
-// Route::delete('/songs/{song}/destroy', [songController::class, 'destroy'])->name('songs.destroy');

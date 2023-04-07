@@ -16,6 +16,7 @@
 <main>
   <section>
     <div class="container text-center">
+      @yield('segnaposto')
       @yield('main-content')
     </div>
   </section>

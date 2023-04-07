@@ -1,6 +1,6 @@
 {{-- utilizzo extends per estendere layouts.app.blade.php --}}
 @extends('layouts.app')
-
+@section ('page-name', 'Detail-song')
 {{-- section che da nome alle pagine e alle azioni --}}
 
 
@@ -8,8 +8,8 @@
 
 
 
-<h1 class="my-5">Titolo del brano: {{$song->title}}</h1>
-  <div class="dettaglio-canzone row mt-1">
+<h1 class="my-4">Titolo del brano: {{$song->title}}</h1>
+:  <div class="dettaglio-canzone row mt-1">
     <div class="col-8 offset-2">
       <div class="card text-center">
         <div class="card-header">
@@ -23,12 +23,12 @@
           </ul>
         </div>
         <div class="card-body">
-          <img src="{{$song->poster}}" >
-          <h3 class="card-title">{{$song->author}}</h3>
-          <h5 class="card-title">{{$song->album}}</h5>
-          <h5 class="card-title">{{$song->editor}}</h5>
-          <h5 class="card-title">{{$song->number_of_streaming}}</h5>
-          <p class="card-text">{{$song->length}}</p>
+          <img class="my-4" src="{{$song->poster}}" >
+          <h2 class="card-title">Cantante:  {{$song->author}}</h2>
+          <h4 class="card-title">Album:  {{$song->album}}</h4>
+          <h4 class="card-title">Editore:  {{$song->editor}}</h4>
+          <h4 class="card-title">Numero di Streaming:  {{$song->number_of_streaming}}</h4>
+          <h5 class="card-text">Lunghezza Brano:  {{$song->length}}</h5>
           <a href="https://www.youtube.com/" class="btn btn-primary">Ascoltala su...</a>
         </div>
       </div>

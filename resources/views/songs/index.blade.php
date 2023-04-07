@@ -12,10 +12,20 @@
 @section('main-content')
 
 <h1 class="my-4">Song List</h1>
-<form class="d-flex my-2 my-lg-0">
-  <input class="form-control me-sm-2" name="term" type="text" placeholder="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
+<div class="row">
+  <div class="col-6">
+    <form class="d-flex my-2 my-lg-0">
+      <input class="form-control me-sm-2" name="term" type="text" placeholder="Search Songs">
+      <button class="btn btn-info my-2 my-sm-0 fw-bold" type="submit">Search</button>
+    </form>
+  </div>
+  <div class="col-6 d-flex justify-content-end">
+    <a type="button" class="btn btn-success fw-bold" href="{{route('songs.create')}}">Create New Song Link</a>
+  </div>
+</div>
+
+    
+
 <table class="table table-dark table-striped  mt-5 p-3">
   <thead class="table-head">
     <tr>
