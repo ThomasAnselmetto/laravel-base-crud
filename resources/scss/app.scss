@@ -9,9 +9,9 @@
     }
 }
 
-main {
-    height: 200vh;
-    padding-top: 15px;
+body {
+    // padding: 2rem 0;
+    min-height: 100vh;
     background-image: linear-gradient(
         to top,
         #0c0707 0%,
@@ -45,4 +45,18 @@ table {
         font-size: 22px;
         font-weight: 600;
     }
+}
+
+.delete-icon {
+    background-color: transparent;
+    border: none;
+}
+
+.modal-content {
+    background-image: linear-gradient(
+        to top,
+        #0c0707 0%,
+        #2410d7 50%,
+        #13eaf5 100%
+    );
 }

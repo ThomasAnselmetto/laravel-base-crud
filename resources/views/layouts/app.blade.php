@@ -25,6 +25,6 @@
 
 
 
-  
+  @yield('modals')
 </body>
 </html>

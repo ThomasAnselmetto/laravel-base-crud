@@ -101,9 +101,9 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Song $song)
     {
-        //
+        return view('songs.edit', compact('song'));
     }
 
     /**
@@ -113,9 +113,27 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    //  anche qui possiamo sostituire $id con la dipendence injection(Model $var)
+    public function update(Request $request, Song $song)
     {
-        //
+        $request->validate([
+        
+            'title' => 'required',
+            'album' => 'required|string|max:50',
+            'author' => 'required|string|max:50',
+            'editor' => 'required|string|max:50',
+            'length' => 'required|decimal:2',
+            'number_of_streaming' => 'required|integer|between:1,10000000',
+            'music_release_formats' => "required|string|in:33 giri,45 giri,cd,digitale"
+        ],[
+            '*.required' => ':attribute is Required',
+            'length.decimal' => 'the number must have two decimals'
+        ]);
+        $data = $request->all();
+        
+        // per poter utilizzare fill devo stabilire gli elementi fillable nel model
+        $song->update($data);
+        return redirect()->route('songs.show',$song);
     }
 
     /**
@@ -124,8 +142,10 @@ class SongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    // il destroy e' semplice dipendence injection(Model $var) e poi $var delete() e redirect
+    public function destroy(Song $song)
     {
-        //
+        $song->delete();
+        return redirect()->route('songs.index');
     }
 }

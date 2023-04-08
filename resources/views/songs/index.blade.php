@@ -35,8 +35,8 @@
       <th scope="col">Author</th>
       <th scope="col">Editor</th>
       <th scope="col">Length</th>
-      <th scope="col">Number of Streaming</th>
-      <th scope="col">Music Release Formats</th>
+      <th scope="col">Streamings</th>
+      <th scope="col">Formats</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -52,8 +52,15 @@
       <td>{{$song->length}}</td>
       <td>{{$song->number_of_streaming}}</td>
       <td>{{$song->music_release_formats}}</td>
-      <td><a href="{{ route('songs.show', ['song' => $song ])}}"><i class="bi bi-sliders2-vertical"></i></a></td>
-
+      <td class="d-flex justify-content-between">
+        <a class="" href="{{ route('songs.show', ['song' => $song ])}}"><i class="bi bi-sliders2-vertical text-success fs-3"></i></a>
+        <a class="" href="{{ route('songs.edit', ['song' => $song ])}}"><i class="bi bi-bandaid-fill text-success fs-3"></i></a>
+        {{-- per la cancellazione non possiamo usare un link ma abbiamo bisogno di un form con la route nella action,method post e il token csrf --}}
+        <button class="bi bi-clipboard2-x-fill text-danger delete-icon fs-3" data-bs-toggle="modal" data-bs-target="#delete-modal-{{$song->id}}"></button>
+      </td>
+      <!-- Modal -->
+      
+      
       {{-- creata la colonna detail creo un td che rimanderà alla rotta della show e gli viene passato il parametro con l'intero elemento $song tramite array associativo['song' => $song possiamo passarlo anche solo come $song] (a noi serve l'id ma la resource ci facilita in questo senso) --}}
     </tr>
     @endforeach
@@ -63,7 +70,38 @@
 {{-- {{$songs->links()}} utilizzo per paginare questo semplice comapndo --}}
 {{-- se lo voglio con bootstrap invece questo --}}
 {{$songs->links("pagination::bootstrap-5")}}
+
+{{-- le modals si mettono a fondo pagina e si riportano nella view app con lo yield --}}
+
 @endsection
+@section('modals')
+@foreach($songs as $song)
+<div class="modal fade" id="delete-modal-{{$song->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-4  fw-bold" id="exampleModalLabel">Attention</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body fs-2 fw-bold">
+        Are you sure you want to delete the song with title {{$song->title}}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info text-light border fw-bold" data-bs-dismiss="modal">Close</button>
+        <form class="" action="{{ route('songs.destroy', ['song' => $song ])}}" method="POST">
+          @csrf
+          @method('delete')
+          <button type="submit" class="btn btn-danger border fw-bold">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
+@endsection 
+
+
+
 
 
 
